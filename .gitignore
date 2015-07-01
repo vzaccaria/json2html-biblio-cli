@@ -1,3 +1,5 @@
 node_modules
 lib
 makefile
+src/.#index.js
+src/#index.js#
