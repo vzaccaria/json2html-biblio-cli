@@ -1,4 +1,4 @@
-# json2html-biblio
+# json2html-biblio-cli
 > {{description}}
 
 ## Install
@@ -6,7 +6,7 @@
 Install it with
 
 ```
-npm install json2html-biblio
+npm install json2html-biblio-cli
 ```
 ## Usage
 
