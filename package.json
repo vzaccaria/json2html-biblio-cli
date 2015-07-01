@@ -7,9 +7,6 @@
     "json2html-biblio": "./index.js"
   },
   "man": "./man/doc.1",
-  "scripts": {
-    "test": "make test"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/vzaccaria/json2html-biblio-cli.git"
