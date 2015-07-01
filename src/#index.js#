@@ -1,0 +1,70 @@
+var {
+    docopt
+} = require('docopt')
+var bb = require('bluebird')
+var _ = require('lodash')
+var fs = bb.promisifyAll(require('fs'))
+
+var getOptions = doc => {
+    "use strict"
+	
+    var o = docopt(doc)
+    var filename = o["--file"] || '/dev/stdin'
+    var output = o["--output"] || '/dev/stdout'
+    var templateName = o["--template"] || ""
+    var config = o["--config"] || ""
+
+    return {
+        help, filename, output, templateName, config
+    }
+}
+
+var doc = fs.readFileSync(__dirname + "/docs/usage.md", 'utf8')
+
+var main = () => {
+    "use strict"
+    var opts = getOptions(doc)
+    var {
+        filename, templateName
+    } = opts
+    fs.readFileAsync(fileName, 'utf-8').then(data) => {
+        data = JSON.parse(data)
+        _.map(processData, data)
+        if (templateName === "") {
+            if (output == '/dev/stdout') {
+                console.log(JSON.stringify(data, 0, 4))
+            } else {
+                fs.writeFileAsync(output, JSON.stringify(data, 0, 4), 'utf8').then {
+                    () => {
+                        console.error "done"
+                    }
+                }
+            }
+        } else {
+            locals = {
+                filename: template - name,
+                data: data,
+                pretty: true
+            }
+            conf = read - json config
+            locals = _.extend(locals, conf)
+            template = fs.readFileSync(template - name, 'utf-8')
+            result = jade.compile(template, locals)(locals)
+            result = beml.process(result)
+
+            if output == '/dev/stdout'
+            console.log result
+            else
+                fs.writeFileAsync(output, result, 'utf8').then - >
+                console.error "done"
+
+
+        }
+    }
+
+    var {
+        help
+    } = (getOptions(doc))
+}
+
+main()

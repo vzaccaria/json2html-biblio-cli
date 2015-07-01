@@ -1,9 +1,9 @@
 Usage:
-    json2html-biblio ( -h | --help )
+    json2html-biblio-cli [-f INPUT] [-t JADE -c CONFIG] [-o HTML]
+    json2html-biblio-cli -h | --help 
 
 Options:
-    -h, --help              help for json2html-biblio
-
-Commands:
-
-Arguments:
+    -f, --file INPUT        Optional, original biblio.json file, if missing stdin is assumed.
+    -o, --output HTML       Optional, output filename.
+    -t, --template JADE     Specify Jade template to fill with this data.
+    -c, --config CONFIG     JSON configuration file of the site (has a `baseUrl` property)
